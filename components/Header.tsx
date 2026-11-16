@@ -2,7 +2,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { nav, site } from "@/lib/site";
+import { nav, site, waDefault } from "@/lib/site";
+import { Icon } from "./Icon";
 
 export function Header() {
   const path = usePathname();
@@ -20,7 +21,7 @@ export function Header() {
     <header className={`hdr${scrolled ? " hdr-scrolled" : ""}${open ? " hdr-open" : ""}`}>
       <div className="wrap hdr-in">
         <Link href="/" className="hdr-logo" aria-label={`${site.name}: página inicial`}>
-          <img src="/brand/logo-blue.png" alt={site.legalName} width={804} height={152} />
+          <img src="/brand/logo-blue.svg" alt={site.legalName} width={804} height={152} />
         </Link>
         <nav className="hdr-nav" aria-label="Principal">
           {nav.map((n) => (
@@ -29,7 +30,7 @@ export function Header() {
         </nav>
         <div className="hdr-cta">
           <a href={site.phoneHref} className="hdr-phone">{site.phoneDisplay}</a>
-          <Link href="/contato" className="btn btn-primary btn-sm">Solicitar proposta</Link>
+          <a href={waDefault} target="_blank" rel="noopener" className="btn btn-primary btn-sm"><Icon name="whats" size={18} /> WhatsApp</a>
         </div>
         <button className="hdr-burger" aria-label="Menu" aria-expanded={open} onClick={() => setOpen(!open)}><span /><span /></button>
       </div>

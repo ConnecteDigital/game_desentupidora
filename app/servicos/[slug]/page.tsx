@@ -4,9 +4,10 @@ import { notFound } from "next/navigation";
 import { PageHero } from "@/components/PageHero";
 import { Icon } from "@/components/Icon";
 import { Reveal } from "@/components/Reveal";
-import { QuoteForm } from "@/components/QuoteForm";
+import { WhatsBox } from "@/components/WhatsBox";
+import { Photo } from "@/components/Photo";
+import { Clip } from "@/components/Clip";
 import { getService, services } from "@/lib/services";
-import { site } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -16,7 +17,7 @@ export const generateStaticParams = () => services.map((s) => ({ slug: s.slug })
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const s = getService((await params).slug);
   if (!s) return {};
-  return { title: `${s.title} em Belo Horizonte`, description: s.short };
+  return { title: `${s.title} em BH, Contagem e Betim`, description: s.short };
 }
 
 export default async function Page({ params }: Props) {
@@ -37,6 +38,16 @@ export default async function Page({ params }: Props) {
             <Reveal>
               {s.body.map((p) => <p key={p.slice(0, 24)}>{p}</p>)}
             </Reveal>
+            {s.clips && (
+              <Reveal className={`shots shots-${Math.max(s.clips.length, 2)}`}>
+                {s.clips.map((c) => <Clip key={c.name} {...c} />)}
+              </Reveal>
+            )}
+            {s.photos && (
+              <Reveal className={`shots shots-${s.photos.length}`}>
+                {s.photos.map((p) => <Photo key={p.file} file={p.file} alt={p.alt} />)}
+              </Reveal>
+            )}
             <Reveal>
               <h2>O que o serviço compreende</h2>
               <ul className="checks">
@@ -57,11 +68,7 @@ export default async function Page({ params }: Props) {
             </Reveal>
           </article>
           <aside className="aside">
-            <div className="aside-box">
-              <h2>Solicitar proposta</h2>
-              <p>Atendimento em {site.region}.</p>
-              <QuoteForm defaultService={s.title} />
-            </div>
+            <WhatsBox service={s.title} />
             <nav className="aside-nav" aria-label="Outros serviços">
               <h3>Outros serviços</h3>
               {others.map((o) => <Link key={o.slug} href={`/servicos/${o.slug}`}>{o.title}<Icon name="arrow" size={16} /></Link>)}

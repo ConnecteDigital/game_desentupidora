@@ -7,8 +7,8 @@ export function Footer() {
     <footer className="ftr">
       <div className="wrap ftr-grid">
         <div className="ftr-brand">
-          <img src="/brand/logo-teal.png" alt={site.legalName} width={804} height={152} />
-          <p>{site.tagline}. Atendimento a empresas, condomínios e órgãos públicos em {site.region}.</p>
+          <img src="/brand/logo-teal.svg" alt={site.legalName} width={804} height={152} />
+          <p>{site.tagline}. Atendimento {site.hours}, em {site.region}.</p>
         </div>
         <div>
           <h3>Serviços</h3>

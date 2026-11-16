@@ -17,7 +17,7 @@ const models = [
 ];
 
 const docs = [
-  "Proposta comercial em papel timbrado, com escopo e método",
+  "Proposta comercial com escopo, método e prazo",
   "Cartão CNPJ e dados cadastrais para homologação de fornecedor",
   "Emissão de nota fiscal de serviço",
   "Registro do serviço executado ao final de cada atendimento",

@@ -8,11 +8,17 @@ export type Service = {
   includes: string[];
   applications: string[];
   faq: { q: string; a: string }[];
+  photos?: { file: string; alt: string }[];
+  clips?: { name: string; label: string }[];
 };
 
 export const services: Service[] = [
   {
     slug: "desentupimento",
+    clips: [
+      { name: "desentupimento-pia", label: "Desentupimento de pia de cozinha" },
+      { name: "desentupimento-area-servico", label: "Desentupimento de ralo em área de serviço" },
+    ],
     icon: "drain",
     title: "Desentupimento",
     short: "Pias, ralos, vasos sanitários, tanques e tubulações internas, com equipamento adequado a cada diâmetro.",
@@ -37,6 +43,7 @@ export const services: Service[] = [
   },
   {
     slug: "desentupimento-de-esgoto",
+    clips: [{ name: "desentupimento-ralo", label: "Desobstrução de rede de esgoto pelo ralo" }],
     icon: "sewer",
     title: "Desentupimento de esgoto e colunas",
     short: "Redes de esgoto, colunas prediais, caixas de inspeção e ramais externos de imóveis e condomínios.",
@@ -85,6 +92,7 @@ export const services: Service[] = [
   },
   {
     slug: "limpa-fossa",
+    photos: [{ file: "succao.jpg", alt: "Técnico da Game Desentupidora em serviço de sucção com mangote" }],
     icon: "truck",
     title: "Limpa fossa e sucção de resíduos",
     short: "Esgotamento de fossas, sumidouros e poços com caminhão a vácuo, e sucção de resíduos líquidos e pastosos.",
@@ -133,6 +141,10 @@ export const services: Service[] = [
   },
   {
     slug: "limpeza-de-caixa-dagua",
+    photos: [
+      { file: "caixa-dagua-antes.jpg", alt: "Caixa d'água antes da limpeza, com sedimentos no fundo" },
+      { file: "caixa-dagua-depois.jpg", alt: "Caixa d'água depois da limpeza e higienização" },
+    ],
     icon: "tank",
     title: "Limpeza de caixa d'água",
     short: "Limpeza e higienização de caixas d'água e reservatórios de residências, condomínios e empresas.",

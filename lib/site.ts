@@ -4,9 +4,9 @@ export const site = {
   legalName: "Game Desentupidora e Dedetizadora",
   tagline: "Desentupimento, hidrojateamento e limpeza técnica de sistemas de esgoto",
   cnpj: "60.204.318/0001-16",
-  phoneDisplay: "(31) 9701-0128",
-  phoneHref: "tel:+553197010128",
-  whatsapp: "553197010128",
+  phoneDisplay: "(31) 99701-0128",
+  phoneHref: "tel:+5531997010128",
+  whatsapp: "5531997010128",
   // TODO: preencher quando o e-mail comercial for criado.
   email: "",
   address: {
@@ -16,7 +16,10 @@ export const site = {
     state: "MG",
     zip: "30880-370",
   },
-  region: "Belo Horizonte e Região Metropolitana",
+  region: "Belo Horizonte, Contagem e Betim",
+  cities: ["Belo Horizonte", "Contagem", "Betim"],
+  years: 5,
+  hours: "24 horas, de domingo a domingo",
   url:
     process.env.NEXT_PUBLIC_SITE_URL ??
     (process.env.VERCEL_PROJECT_PRODUCTION_URL
@@ -29,6 +32,8 @@ export const addressLine = `${site.address.street} · ${site.address.district} �
 export function whatsappLink(message: string) {
   return `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(message)}`;
 }
+
+export const waDefault = whatsappLink("Olá! Gostaria de solicitar um orçamento com a Game Desentupidora.");
 
 export const nav = [
   { href: "/empresa", label: "A empresa" },

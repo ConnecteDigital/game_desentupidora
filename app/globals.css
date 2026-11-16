@@ -163,12 +163,32 @@ h3 { font-size: 1.25rem; }
 .steps p { font-size: 1rem; }
 
 /* Galeria */
-.gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-.gallery .photo:first-child { grid-column: span 2; grid-row: span 2; aspect-ratio: auto !important; }
-.photo { border-radius: var(--radius); overflow: hidden; background: var(--mist); }
+.gallery { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 250px 250px; gap: 18px; }
+.gallery .photo:nth-child(1), .gallery .photo:nth-child(2) { grid-row: span 2; }
+.photo { border-radius: var(--radius); overflow: hidden; background: var(--mist); min-height: 0; }
 .photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.9s var(--ease); }
 .photo:hover img { transform: scale(1.04); }
-.photo-empty { display: grid; place-items: center; padding: 20px; text-align: center; font-size: 0.9rem; color: rgba(255, 255, 255, 0.75); background: repeating-linear-gradient(135deg, rgba(110, 220, 211, 0.12) 0 2px, transparent 2px 18px), linear-gradient(140deg, var(--blue), var(--blue-deep)); border: 1px dashed rgba(110, 220, 211, 0.5); }
+.shots { display: grid; gap: 18px; }
+.shots-2 { grid-template-columns: 1fr 1fr; }
+.shots-1 .photo { aspect-ratio: 16 / 10; }
+.shots-2 .photo { aspect-ratio: 4 / 5; }
+.clips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.clip { position: relative; border-radius: var(--radius); overflow: hidden; background: var(--navy); aspect-ratio: 9 / 14; }
+.clip video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.clip figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 48px 20px 18px; color: #fff; font-size: 0.98rem; background: linear-gradient(transparent, rgba(5, 32, 79, 0.85)); }
+
+.btn-whats { background: #1faf54; color: #fff; width: 100%; }
+.btn-whats:hover { background: #17994a; box-shadow: 0 10px 24px -10px rgba(31, 175, 84, 0.8); }
+.wbox { padding: 34px 32px; border-radius: var(--radius); background: var(--navy); color: rgba(255, 255, 255, 0.78); }
+.wbox h2 { color: #fff; font-size: 1.6rem; margin-bottom: 10px; }
+.wbox > p { margin-bottom: 24px; }
+.wbox-phone { display: block; text-align: center; margin-top: 14px; color: #fff; font-size: 1.3rem; font-weight: 500; }
+.wbox ul { margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.16); display: grid; gap: 10px; font-size: 0.95rem; }
+.wbox li { display: flex; gap: 10px; align-items: flex-start; }
+.wbox li svg { flex-shrink: 0; color: var(--teal); margin-top: 3px; }
+.wfloat { position: fixed; right: 22px; bottom: 22px; z-index: 60; display: grid; place-items: center; width: 60px; height: 60px; border-radius: 50%; background: #1faf54; color: #fff; box-shadow: 0 14px 30px -10px rgba(5, 32, 79, 0.6); transition: transform 0.3s var(--ease); }
+.wfloat:hover { transform: scale(1.08); }
+.contact-main { display: grid; gap: 22px; }
 
 /* Chamada final */
 .cta { background: var(--blue); color: rgba(255, 255, 255, 0.85); position: relative; overflow: hidden; }
@@ -296,7 +316,10 @@ h3 { font-size: 1.25rem; }
   .split, .cta-in { grid-template-columns: 1fr; display: grid; }
   .split-head { position: static; }
   .cta-actions { flex-wrap: wrap; }
-  .gallery { grid-template-columns: 1fr 1fr; }
+  .gallery { grid-template-columns: 1fr 1fr; grid-template-rows: none; grid-auto-rows: 220px; }
+  .gallery .photo:nth-child(1) { grid-column: span 2; grid-row: auto; }
+  .clips { grid-template-columns: 1fr 1fr; }
+  .cta-actions .btn { flex: 1; }
   .row { grid-template-columns: 44px 1fr 44px; padding: 24px 4px; }
   .row:hover { padding-inline: 4px; }
   .row-n { display: none; }

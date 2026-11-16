@@ -42,7 +42,7 @@ export default function Page() {
               <div><dt>Atendimento</dt><dd>{site.hours}</dd></div>
             </dl>
           </Reveal>
-          <Reveal delay={120}><Photo file="frota.jpg" alt="Frota da Game Desentupidora na sede, em Belo Horizonte" ratio="4 / 5" /></Reveal>
+          <Reveal delay={120}><Photo file="garagem-frota.jpg" alt="Frota da Game Desentupidora na garagem da sede, em Belo Horizonte" ratio="4 / 5" /></Reveal>
         </div>
       </section>
       <section className="sec sec-mist">

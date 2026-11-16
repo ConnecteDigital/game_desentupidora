@@ -42,7 +42,7 @@ export default async function Page({ params }: Props) {
             {media > 0 && (
               <Reveal className={`shots shots-${Math.min(media, 3)}`}>
                 {s.clips?.map((c) => <Clip key={c.name} {...c} />)}
-                {s.photos?.map((p) => <Photo key={p.file} file={p.file} alt={p.alt} />)}
+                {s.photos?.map((p) => <Photo key={p.file} {...p} />)}
               </Reveal>
             )}
             <Reveal>

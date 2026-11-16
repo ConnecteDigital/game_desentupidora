@@ -8,7 +8,7 @@ export type Service = {
   includes: string[];
   applications: string[];
   faq: { q: string; a: string }[];
-  photos?: { file: string; alt: string }[];
+  photos?: { file: string; alt: string; pos?: string }[];
   clips?: { name: string; label: string }[];
 };
 
@@ -70,6 +70,10 @@ export const services: Service[] = [
   },
   {
     slug: "hidrojateamento",
+    photos: [
+      { file: "caminhao-mangote.jpg", alt: "Caminhão da Game Desentupidora com mangueira estendida em atendimento na rua" },
+      { file: "caminhao.jpg", alt: "Caminhão com carretel de mangueira de hidrojateamento em atendimento noturno" },
+    ],
     icon: "jet",
     title: "Hidrojateamento",
     short: "Limpeza de tubulações e redes com jato de água em alta pressão, removendo gordura e incrustações das paredes do tubo.",
@@ -95,8 +99,8 @@ export const services: Service[] = [
   {
     slug: "limpa-fossa",
     photos: [
-      { file: "succao.jpg", alt: "Técnico da Game Desentupidora em serviço de sucção com mangote" },
-      { file: "caminhao.jpg", alt: "Caminhão a vácuo da Game Desentupidora em atendimento noturno" },
+      { file: "succao-bueiro.jpg", alt: "Técnico com capacete conduzindo o mangote de sucção em caixa subterrânea", pos: "top" },
+      { file: "van-caminhao.jpg", alt: "Veículo de apoio e caminhão a vácuo da Game Desentupidora" },
     ],
     icon: "truck",
     title: "Limpa fossa e sucção de resíduos",
@@ -122,6 +126,10 @@ export const services: Service[] = [
   },
   {
     slug: "limpeza-de-caixa-de-gordura",
+    photos: [
+      { file: "succao.jpg", alt: "Técnico da Game Desentupidora limpando caixa com mangueira e mangote de sucção" },
+      { file: "succao-bueiro.jpg", alt: "Sucção de resíduos em caixa subterrânea com caminhão a vácuo", pos: "top" },
+    ],
     icon: "grease",
     title: "Limpeza de caixa de gordura",
     short: "Remoção da gordura acumulada, lavagem da caixa e desobstrução da linha, para cozinhas residenciais e comerciais.",

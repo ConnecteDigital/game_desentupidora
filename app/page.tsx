@@ -125,9 +125,9 @@ export default function Home() {
           <Reveal className="gallery">
             <Photo file="fachada.jpg" alt="Fachada da sede da Game Desentupidora em Belo Horizonte" />
             <Photo file="frota.jpg" alt="Caminhão a vácuo e veículos da frota na garagem da sede" />
-            <Photo file="frota-rua.jpg" alt="Veículos da Game Desentupidora em atendimento" />
+            <Photo file="picape.jpg" alt="Picape da Game Desentupidora em atendimento" />
             <Photo file="atendimento-noite.jpg" alt="Equipe em atendimento noturno com máquina desentupidora" />
-            <Photo file="succao.jpg" alt="Técnico em serviço de sucção com mangote" />
+            <Photo file="succao-bueiro.jpg" alt="Técnico com capacete em serviço de sucção" pos="top" />
           </Reveal>
         </div>
       </section>

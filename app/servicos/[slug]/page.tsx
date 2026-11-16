@@ -23,6 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Page({ params }: Props) {
   const s = getService((await params).slug);
   if (!s) notFound();
+  const media = (s.clips?.length ?? 0) + (s.photos?.length ?? 0);
   const others = services.filter((o) => o.slug !== s.slug);
   const faqLd = {
     "@context": "https://schema.org",
@@ -38,14 +39,10 @@ export default async function Page({ params }: Props) {
             <Reveal>
               {s.body.map((p) => <p key={p.slice(0, 24)}>{p}</p>)}
             </Reveal>
-            {s.clips && (
-              <Reveal className={`shots shots-${Math.max(s.clips.length, 2)}`}>
-                {s.clips.map((c) => <Clip key={c.name} {...c} />)}
-              </Reveal>
-            )}
-            {s.photos && (
-              <Reveal className={`shots shots-${s.photos.length}`}>
-                {s.photos.map((p) => <Photo key={p.file} file={p.file} alt={p.alt} />)}
+            {media > 0 && (
+              <Reveal className={`shots shots-${Math.min(media, 3)}`}>
+                {s.clips?.map((c) => <Clip key={c.name} {...c} />)}
+                {s.photos?.map((p) => <Photo key={p.file} file={p.file} alt={p.alt} />)}
               </Reveal>
             )}
             <Reveal>

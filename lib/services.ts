@@ -19,6 +19,7 @@ export const services: Service[] = [
       { name: "desentupimento-pia", label: "Desentupimento de pia de cozinha" },
       { name: "desentupimento-area-servico", label: "Desentupimento de ralo em área de serviço" },
     ],
+    photos: [{ file: "desentupimento-maquina.jpg", alt: "Técnico desentupindo tubulação de pia com máquina rotativa" }],
     icon: "drain",
     title: "Desentupimento",
     short: "Pias, ralos, vasos sanitários, tanques e tubulações internas, com equipamento adequado a cada diâmetro.",
@@ -44,6 +45,7 @@ export const services: Service[] = [
   {
     slug: "desentupimento-de-esgoto",
     clips: [{ name: "desentupimento-ralo", label: "Desobstrução de rede de esgoto pelo ralo" }],
+    photos: [{ file: "esgoto-caixa.jpg", alt: "Máquina rotativa desobstruindo rede de esgoto pela caixa de inspeção" }],
     icon: "sewer",
     title: "Desentupimento de esgoto e colunas",
     short: "Redes de esgoto, colunas prediais, caixas de inspeção e ramais externos de imóveis e condomínios.",
@@ -92,7 +94,10 @@ export const services: Service[] = [
   },
   {
     slug: "limpa-fossa",
-    photos: [{ file: "succao.jpg", alt: "Técnico da Game Desentupidora em serviço de sucção com mangote" }],
+    photos: [
+      { file: "succao.jpg", alt: "Técnico da Game Desentupidora em serviço de sucção com mangote" },
+      { file: "caminhao.jpg", alt: "Caminhão a vácuo da Game Desentupidora em atendimento noturno" },
+    ],
     icon: "truck",
     title: "Limpa fossa e sucção de resíduos",
     short: "Esgotamento de fossas, sumidouros e poços com caminhão a vácuo, e sucção de resíduos líquidos e pastosos.",
